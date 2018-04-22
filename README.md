@@ -29,7 +29,8 @@ To gain root access type "su root". Password: root
 
 user@docker-node:/data$ ls
 README.md  package.json
-user@docker-node:/data$
+user@docker-node:/data$ node --version
+v9.11.1
 ```
 
 - Run some scripts that require a ubuntu xenial environment
