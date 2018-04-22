@@ -10,6 +10,7 @@ starts a docker container from your defined docker image and:
   - mounts your current working directory inside the container as /data
   - sets your current uid and gid inside the container
   - starts then a shell inside the container with your uid and gid
+  - sets the container root password to `root`
   - destroys the docker container on exit
 
 ## Usage
