@@ -41,8 +41,8 @@ docker-env ubuntu:xenial
 ## Installation
 
 ```
-curl https://raw.githubusercontent.com/schue30/docker-env/master/docker-env.sh -o /usr/local/bin/docker-env
-chmod +x /usr/local/bin/docker-env
+sudo curl https://raw.githubusercontent.com/schue30/docker-env/master/docker-env.sh -o /usr/local/bin/docker-env
+sudo chmod +x /usr/local/bin/docker-env
 ```
 
 ## ToDo's
