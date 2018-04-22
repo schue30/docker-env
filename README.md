@@ -23,7 +23,13 @@ docker-env <docker-image-name>:<tag>
 
 - Start a node environment to install some dependencies of your node project in the current folder.
 ```
-docker-env node
+user@host:~/project$ docker-env node
+
+To gain root access type "su root". Password: root
+
+user@docker-node:/data$ ls
+README.md  package.json
+user@docker-node:/data$
 ```
 
 - Run some scripts that require a ubuntu xenial environment
