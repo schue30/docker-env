@@ -7,7 +7,7 @@ And if you want to install some dependencies inside the docker container this sc
 
 ### tldr
 starts a docker container from your defined docker image and:
-  - mounts your current working directory inside the container ( /data )
+  - mounts your current working directory inside the container as /data
   - sets your current uid and gid inside the container
   - starts then a shell inside the container with your uid and gid
   - destroys the docker container on exit
