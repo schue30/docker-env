@@ -19,18 +19,23 @@ if [ -f "/.dockerenv" ]; then
 	TMP_UID=${VUID}
 	unset VUID VGID VUNAME VGNAME
 	export PS1='\u@\h:\w$ '
-	chmod 4755 /bin/su # permission settings in alpine wont allow to run su as non root user
 	chmod +x /bin/gosu
 	echo ""
-	echo "To gain root access type \"su root\". Password: root"
+	echo "To gain root access type \"su\". Password: root"
 	echo ""
 	exec /bin/gosu ${TMP_UID} ${VSHELL}
 else
 	# running outside of docker container
 	if [ -z $1 ]; then
-		echo "$0 image-name:tag"
+		echo "$0 docker-image-name:tag"
 		exit 1
 	fi
+	for cmd in "docker" "wget" "awk"; do
+		if [ ! -x "$(command -v "${cmd}")" ]; then
+			echo "Error: ${cmd} is not installed." >&2
+			exit 1
+		fi
+	done
 	if [ ! -d "${DOCKER_ENV_DIR}" ]; then
 		echo "Creating ${DOCKER_ENV_DIR} directory"
 		mkdir -p "${DOCKER_ENV_DIR}"
